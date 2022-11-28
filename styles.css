@@ -1,5 +1,6 @@
 .intro-content {
   position: relative;
+  /*top: -8rem; */
   top: -8rem;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -22,10 +23,131 @@
 
 .sobre-content { 
   max-width: 64rem;
+  flex-direction: column;
+  flex-wrap: wrap;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   height: 100vh;
   text-align: center;
+}
+
+.grid-main-heading { 
+  margin-bottom: 1rem;
+
+}
+
+.grid-description { 
+  padding-bottom: 5rem;
+}
+
+.grid-one-content { 
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  min-height: 100vh;
+  
+}
+
+.grid { 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  counter-reset: grid-counter;
+
+}
+
+.grid h3{
+  font-size: 3rem;
+  position: relative;
+  padding-left: 5rem;
+  padding-bottom: 3rem;
+}
+
+.grid h3::before { 
+  counter-increment: grid-counter;
+  content: counter(grid-counter);
+  position: absolute;
+  font-size: 8rem;
+  font-style: italic;
+  top: -4rem;
+  left: -2rem;
+  transform: rotate(5deg);
+
+}
+
+.gallery-img { 
+  width: 100%;
+  max-width: 36rem;
+  max-height: 36rem;
+  overflow: hidden;
+}
+
+.gallery-img img:hover {
+  transform: translate(-3%, 3%) scale(1) rotate(5deg); 
+
+}
+
+.contact-form { 
+  grid-column: span 2;
+}
+
+.contact-form .form-grid { 
+  border: none;
+  font-display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--gap)
+
+}
+
+.form-group input:focus, 
+.form-group textarea:focus { 
+  box-shadow: 2px 2px 5px pink
+}
+
+.form-grid legend { 
+  font-style: italic; 
+  font-size: 1.16rem;
+  margin-bottom: 3rem;
+}
+
+.form-group { 
+  flex: 1 1 320px;
+}
+
+.form-group label { 
+  display: block;
+  margin-bottom: 1rem;
+  
+}
+
+.form-group input, 
+.form-group textarea {
+  border: none;
+  background: var(--white-color);
+  padding: 1.5 rem 2 rem;
+  width: 100%;
+
+} 
+
+.form-group button { 
+  border: 0.5rem solid var(--white-color);
+  background: none;
+  color: var(--white-color);
+  padding: 1.5rem 2 rem;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+
+}
+
+.form-group button:hover { 
+  background: var(--white-color);
+  color: var(--white-color);
+}
+
+.form-group ::placeholder { 
+  color:  gray;
 }
 
